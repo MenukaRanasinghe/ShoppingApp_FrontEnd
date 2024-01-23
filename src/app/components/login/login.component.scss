@@ -1,0 +1,109 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+.app-layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.background-image {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url('/assets/bg.png') center/cover no-repeat fixed;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.form-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%; /* Adjusted width */
+  max-width: 350px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(223, 228, 234, 0.2);
+  box-sizing: border-box;
+}
+
+
+fieldset {
+  border: none;
+  border-radius: 8px;
+  padding: 30px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+legend {
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: large;
+  text-align: center;
+}
+
+.form-control2 {
+  font-size: 18px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  color: #ffffff;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.form-label2 {
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 5px;
+  color: #ffffff;
+  text-align: left;
+  margin-left: 5px;
+}
+
+.register {
+  text-align: center;
+  color: #778beb;
+}
+
+.btn-click {
+  background-color: #2D3436;
+  color: white;
+  width: 80%;
+  max-width: 300px;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 5px;
+  margin-top: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.link-underline-primary {
+  color: #778beb;
+  text-decoration: underline;
+  font-size: small;
+}
+
+.text {
+  color: #ffffff;
+  font-size: 14px;
+  margin-top: 15px;
+  text-align: center;
+}
