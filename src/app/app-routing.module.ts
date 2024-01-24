@@ -9,6 +9,9 @@ import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { NavbaruserComponent } from './components/navbaruser/navbaruser.component';
+import { LayoutuserComponent } from './components/layoutuser/layoutuser.component';
+
 
 const routes: Routes = [
   {
@@ -46,6 +49,14 @@ const routes: Routes = [
   {
     path:'register',
     component:RegisterComponent
+  },
+  {
+    path:'navbaruser',
+    component:NavbaruserComponent
+  },
+  {
+    path:'layoutuser',
+    component:LayoutuserComponent
   },
 
 ];

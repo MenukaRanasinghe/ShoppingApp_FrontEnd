@@ -12,6 +12,8 @@ import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { NavbaruserComponent } from './components/navbaruser/navbaruser.component';
+import { LayoutuserComponent } from './components/layoutuser/layoutuser.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { RegisterComponent } from './components/register/register.component';
     AboutComponent,
     ContactComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    NavbaruserComponent,
+    LayoutuserComponent,
   ],
   imports: [
     BrowserModule,
