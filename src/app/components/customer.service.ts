@@ -16,4 +16,7 @@ export class CustomerService {
   getCustomerCount(): Observable<number> {
     return this.http.get<number>(`${this.apiUrl}/users/count`);
   }
+  addCustomer(customerData: any): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/users`, customerData);
+  }
 }

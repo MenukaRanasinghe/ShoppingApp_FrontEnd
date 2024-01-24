@@ -1,39 +1,73 @@
+<!-- signup.component.html -->
+
 <app-layout>
-    <div class="background-image">
-      <div class="form-container">
+  <div class="background-image">
+    <div class="form-container">
+      <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
         <fieldset>
           <legend>SIGN UP</legend>
           <div class="mb-3 text-center"> 
             <label for="emailInput" class="form-label2">Email</label><br>
-            <input type="email" class="form-control2" id="emailInput">
+            <input type="email" class="form-control2" id="emailInput" formControlName="email">
+            <div *ngIf="signupForm?.get('email')?.hasError('required') && signupForm?.get('email')?.touched" class="text-danger">
+              Email is required.
+            </div>
+            <div *ngIf="signupForm?.get('email')?.hasError('email') && signupForm?.get('email')?.touched" class="text-danger">
+              Please enter a valid email address.
+            </div>
           </div>
           <div class="mb-3 text-center"> 
             <label for="fullNameInput" class="form-label2">Full Name</label><br>
-            <input type="email" class="form-control2" id="fullNameInput">
+            <input type="text" class="form-control2" id="fullNameInput" formControlName="full_name">
+            <div *ngIf="signupForm?.get('full_name')?.hasError('required') && signupForm?.get('full_name')?.touched" class="text-danger">
+              Full Name is required.
+            </div>
           </div>
           <div class="mb-3 text-center"> 
             <label for="phoneInput" class="form-label2">Phone</label><br>
-            <input type="email" class="form-control2" id="phoneInput">
+            <input type="text" class="form-control2" id="phoneInput" formControlName="phone">
+            <div *ngIf="signupForm?.get('phone')?.hasError('required') && signupForm?.get('phone')?.touched" class="text-danger">
+              Phone is required.
+            </div>
+            <div *ngIf="signupForm?.get('phone')?.hasError('invalidPhoneFormat') && signupForm?.get('phone')?.touched" class="text-danger">
+              Please enter a valid phone number in the format (123) 456-7890.
+            </div>
           </div>
+          
           <div class="mb-3 text-center"> 
             <label for="addressInput" class="form-label2">Address</label><br>
-            <input type="email" class="form-control2" id="addressInput">
+            <input type="text" class="form-control2" id="addressInput" formControlName="address">
+            <div *ngIf="signupForm?.get('address')?.hasError('required') && signupForm?.get('address')?.touched" class="text-danger">
+              Address is required.
+            </div>
           </div> 
           <div class="mb-3 text-center"> 
             <label for="usernameInput" class="form-label2">Username</label><br>
-            <input type="email" class="form-control2" id="usernameInput">
+            <input type="text" class="form-control2" id="usernameInput" formControlName="username">
+            <div *ngIf="signupForm?.get('username')?.hasError('required') && signupForm?.get('username')?.touched" class="text-danger">
+              Username is required.
+            </div>
           </div>    
           <div class="mb-3 text-center"> 
             <label for="passwordInput" class="form-label2">Password</label><br>
-            <input type="password" class="form-control2" id="passwordInput">
+            <input type="password" class="form-control2" id="passwordInput" formControlName="password">
+            <div *ngIf="signupForm?.get('password')?.hasError('required') && signupForm?.get('password')?.touched" class="text-danger">
+              Password is required.
+            </div>
+            <div *ngIf="signupForm?.get('password')?.hasError('minlength') && signupForm?.get('password')?.touched" class="text-danger">
+              Password must be at least 8 characters long.
+            </div>
           </div>
           <button type="submit" class="btn btn-click">SIGN UP</button>
           <div class="form-text text">
-            Already have an account ?  
+            Already have an account?  
             <a href="login" class="link-underline-primary register">Login</a>
           </div>
+          <div *ngIf="signupError" class="text-danger mt-3">
+            {{ signupError }}
+          </div>
         </fieldset>
-      </div>
+      </form>
     </div>
-  </app-layout>
-  
+  </div>
+</app-layout>

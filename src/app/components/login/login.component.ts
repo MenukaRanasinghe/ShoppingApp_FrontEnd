@@ -18,7 +18,7 @@ export class LoginComponent {
     private router: Router
   ) {
     this.loginForm = this.formBuilder.group({
-      usernameOrEmail: ['', Validators.required], // Update the form control name
+      usernameOrEmail: ['', Validators.required],
       password: ['', Validators.required]
     });
   }
@@ -32,6 +32,7 @@ export class LoginComponent {
 
       this.authService.login(loginData).subscribe(
         (response: any) => {
+          window.alert('Login successful!');
           console.log('Login successful');
 
          

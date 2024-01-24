@@ -1,3 +1,5 @@
+// auth.service.ts
+
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -12,5 +14,9 @@ export class AuthService {
 
   login(loginData: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/login`, loginData);
+  }
+
+  register(formData: any): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/register`, formData);
   }
 }
