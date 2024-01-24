@@ -1,1 +1,27 @@
-<p>sellercategories works!</p>
+<app-layoutseller>
+    <body>
+        <div class="table-container">
+<table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Options</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let category of categories">
+        <td>{{ category.id }}</td>
+        <td>{{ category.name }}</td>
+        <td>
+          <button class="add" (click)="addCategory()">Add</button>
+          <button class="update" (click)="updateCategory(category.id)">Update</button>
+          <button class="delete" (click)="deleteCategory(category.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</app-layoutseller>
+
