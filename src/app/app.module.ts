@@ -26,6 +26,8 @@ import { SellercustomersComponent } from './components/sellercustomers/sellercus
 import { SellercategoriesComponent } from './components/sellercategories/sellercategories.component';
 import { ProductService } from './components/product.service';
 import { OrderService } from './components/order.service';
+import { CustomerService } from './components/customer.service';
+import { CategoryService } from './components/category.service';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -59,7 +61,9 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule
   ],
   providers: [ProductService,
-  OrderService],
+  OrderService,
+CustomerService,
+CategoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
