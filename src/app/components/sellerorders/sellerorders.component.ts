@@ -26,8 +26,26 @@ export class SellerordersComponent {
     console.log(`Update order clicked for ID: ${orderId}`);
   }
 
-  deleteOrder(orderId: number): void {
-    console.log(`Delete order clicked for ID: ${orderId}`);
+
+  loadOrders(): void {
+    this.orderService.getOrders().subscribe(data => {
+      this.orders = data;
+    });
+  }
+  deleteOrder(orderId: any): void {
+    const confirmation = window.confirm('Are you sure you want to delete this order?');
+    
+    if (confirmation) {
+      this.orderService.deleteOrder(orderId).subscribe(
+        response => {
+          console.log(`Order with ID ${orderId} deleted successfully`, response);
+          this.loadOrders();
+        },
+        error => {
+          console.error(`Error deleting order with ID ${orderId}`, error);
+        }
+      );
+    }
   }
   
 }
