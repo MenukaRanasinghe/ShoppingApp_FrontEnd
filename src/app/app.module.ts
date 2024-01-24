@@ -25,6 +25,7 @@ import { SellerordersComponent } from './components/sellerorders/sellerorders.co
 import { SellercustomersComponent } from './components/sellercustomers/sellercustomers.component';
 import { SellercategoriesComponent } from './components/sellercategories/sellercategories.component';
 import { ProductService } from './components/product.service';
+import { OrderService } from './components/order.service';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -57,7 +58,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [ProductService],
+  providers: [ProductService,
+  OrderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

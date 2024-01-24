@@ -1,1 +1,32 @@
-<p>sellerorders works!</p>
+<app-layoutseller>
+    <body>
+        <div class="table-container">
+<table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>created_at</th>
+        <th>total</th>
+        <th>updated_at</th>
+        <th>user_id</th>
+        <th>Options</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of orders">
+        <td>{{ order.id }}</td>
+        <td>{{ order.created_at }}</td>
+        <td>{{ order.total }}</td>
+        <td>{{ order.updated_at }}</td>
+        <td>{{ order.user }}</td>
+        <td>
+          <button class="add" (click)="addOrder()">Add</button>
+          <button class="update" (click)="updateOrder(order.id)">Update</button>
+          <button class="delete" (click)="deleteOrder(order.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</app-layoutseller>
