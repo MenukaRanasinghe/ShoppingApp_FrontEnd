@@ -1,1 +1,38 @@
-<p>sellercollection works!</p>
+<app-layoutseller>
+    <body>
+        <div class="table-container">
+<table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Color</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Category ID</th>
+        <th>Size</th>
+        <th>Options</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td>{{ product.id }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.color }}</td>
+        <td>{{ product.description }}</td>
+        <td>{{ product.price }}</td>
+        <td>{{ product.quantity }}</td>
+        <td>{{ product.category_id }}</td>
+        <td>{{ product.size }}</td>
+        <td>
+          <button class="add" (click)="addProduct()">Add</button>
+          <button class="update" (click)="updateProduct(product.id)">Update</button>
+          <button class="delete" (click)="deleteProduct(product.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</app-layoutseller>

@@ -24,6 +24,8 @@ import { SellercollectionComponent } from './components/sellercollection/sellerc
 import { SellerordersComponent } from './components/sellerorders/sellerorders.component';
 import { SellercustomersComponent } from './components/sellercustomers/sellercustomers.component';
 import { SellercategoriesComponent } from './components/sellercategories/sellercategories.component';
+import { ProductService } from './components/product.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -52,9 +54,10 @@ import { SellercategoriesComponent } from './components/sellercategories/sellerc
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
