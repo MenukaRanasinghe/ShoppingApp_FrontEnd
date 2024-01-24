@@ -13,4 +13,7 @@ export class OrderService {
   getOrders(): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}/orders`);
   }
+  getOrderCount(): Observable<number> {
+    return this.http.get<number>(`${this.apiUrl}/orders/count`);
+  }
 }

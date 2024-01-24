@@ -8,6 +8,7 @@ import { ProductService } from '../product.service';
 })
 export class SellercollectionComponent {
   products: any[] = [];
+  productCount: number | undefined;
 
   constructor(private productService: ProductService) {}
 

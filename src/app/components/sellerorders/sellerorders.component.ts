@@ -8,6 +8,7 @@ import { OrderService } from '../order.service';
 })
 export class SellerordersComponent {
   orders: any[] = [];
+  orderCount: number | undefined;
 
   constructor(private orderService: OrderService) {}
 
@@ -28,4 +29,5 @@ export class SellerordersComponent {
   deleteOrder(orderId: number): void {
     console.log(`Delete order clicked for ID: ${orderId}`);
   }
+  
 }

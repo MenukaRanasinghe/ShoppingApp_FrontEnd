@@ -8,6 +8,7 @@ import { CategoryService } from '../category.service';
 })
 export class SellercategoriesComponent {
   categories: any[] = [];
+  categoryCount: number | undefined;
 
   constructor(private categoryService: CategoryService) {}
 

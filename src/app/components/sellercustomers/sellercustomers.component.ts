@@ -8,6 +8,7 @@ import { CustomerService } from '../customer.service';
 })
 export class SellercustomersComponent {
   customers: any[] = [];
+  customerCount: number | undefined;
 
   constructor(private customerService: CustomerService) {}
 
