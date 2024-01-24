@@ -3,15 +3,15 @@
         <img src="assets/logo.png" alt="Belezza">
     </div>
     <nav class="navbar-links">
-        <a [class.selected]="selectedTab === 'home'" (click)="selectTab('home')" href="#">Home</a>
-        <a [class.selected]="selectedTab === 'collection'" (click)="selectTab('collection')" href="#">Collection</a>
-        <a [class.selected]="selectedTab === 'order'" (click)="selectTab('order')" href="#">Orders</a>
-        <a [class.selected]="selectedTab === 'about'" (click)="selectTab('about')" href="#">About Us</a>
-        <a [class.selected]="selectedTab === 'contact'" (click)="selectTab('contact')" href="#">Contact</a>
+        <a [class.selected]="selectedTab === 'home'" (click)="selectTab('home')" href="home">Home</a>
+        <a [class.selected]="selectedTab === 'collection'" (click)="selectTab('collection')" href="collection">Collection</a>
+        <a [class.selected]="selectedTab === 'order'" (click)="selectTab('order')" href="order">Orders</a>
+        <a [class.selected]="selectedTab === 'about'" (click)="selectTab('about')" href="about">About Us</a>
+        <a [class.selected]="selectedTab === 'contact'" (click)="selectTab('contact')" href="contact">Contact</a>
     </nav>
     <div class="navbar-icons">
-        <img src="assets/cart.png" alt="Cart">
-        <img src="assets/user.png" alt="User">
+        <a href="cart"><img src="assets/cart.png" alt="Cart"></a>
+        <a href="user"><img src="assets/user.png" alt="User"></a>
     </div>
 </header>
 
