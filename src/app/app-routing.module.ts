@@ -11,7 +11,11 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { NavbaruserComponent } from './components/navbaruser/navbaruser.component';
 import { LayoutuserComponent } from './components/layoutuser/layoutuser.component';
-
+import { CartComponent } from './components/cart/cart.component';
+import { OrderComponent } from './components/order/order.component';
+import { OrderingComponent } from './components/ordering/ordering.component';
+import { NavbarsellerComponent } from './components/navbarseller/navbarseller.component';
+import { LayoutsellerComponent } from './components/layoutseller/layoutseller.component';
 
 const routes: Routes = [
   {
@@ -58,6 +62,27 @@ const routes: Routes = [
     path:'layoutuser',
     component:LayoutuserComponent
   },
+  {
+    path:'cart',
+    component:CartComponent
+  },
+  {
+    path:'order',
+    component:OrderComponent
+  },
+  {
+    path:'ordering',
+    component:OrderingComponent
+  },
+  {
+    path:'navbarseller',
+    component:NavbarsellerComponent
+  },
+  {
+    path:'layoutseller',
+    component:LayoutsellerComponent
+  },
+
 
 ];
 

@@ -1,0 +1,15 @@
+<header class="navbar">
+    <div class="navbar-logo">
+      <img src="assets/logo.png" alt="Belezza">
+    </div>
+    <nav class="navbar-links">
+      <a [class.selected]="selectedTab === 'home'" (click)="selectTab('home')" href="#">Home</a>
+      <a [class.selected]="selectedTab === 'collection'" (click)="selectTab('collection')" href="#">Collection</a>
+      <a [class.selected]="selectedTab === 'order'" (click)="selectTab('order')" href="#">Orders</a>
+      <a [class.selected]="selectedTab === 'customer'" (click)="selectTab('customer')" href="#">Customers</a>
+      <a [class.selected]="selectedTab === 'category'" (click)="selectTab('category')" href="#">Categories</a>
+    </nav>
+    <div class="navbar-icons">
+        <img src="assets/user.png" alt="User">
+    </div>
+  </header>

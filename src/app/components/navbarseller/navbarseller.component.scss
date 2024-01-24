@@ -1,0 +1,66 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    margin:-10px;
+    height: 60px;
+  }
+  .black-button{
+    background-color: #fff;
+              color: #000000;
+              border-color: #000000;
+              padding: 0.5rem 1rem;
+              border-radius: 0.25rem;
+              cursor: pointer;
+    
+              &:hover {
+                  background-color: #3742FA;
+                  color: #fff;
+                  border: none;
+              }
+  }
+  .navbar-logo {
+    .logo-image {
+      max-width: 100px;
+      max-height: auto;
+      width: auto;
+      height: auto;
+    }
+  }
+  
+  .navbar-links {
+    display: flex;
+    gap: 10px;
+    margin: 0; /* Reset margin */
+  }
+  
+  .navbar-links a {
+    font-size: 1.1rem;
+    color: #000000;
+    text-decoration: none;
+    padding: 10px;
+    margin: 0; /* Reset margin */
+  }
+  
+  .navbar-login {
+    background-color: #ffffff;
+    color: #86817d;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 0; /* Reset margin */
+  }
+  
+  .navbar-links a.selected {
+    border-bottom: 2px solid #000000; /* Add the desired underline style */
+  }
+
+  .navbar-icons {
+    display: flex;
+    gap: 30px; 
+    margin-right: 20px;
+}  

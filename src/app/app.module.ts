@@ -14,6 +14,11 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { NavbaruserComponent } from './components/navbaruser/navbaruser.component';
 import { LayoutuserComponent } from './components/layoutuser/layoutuser.component';
+import { CartComponent } from './components/cart/cart.component';
+import { OrderComponent } from './components/order/order.component';
+import { OrderingComponent } from './components/ordering/ordering.component';
+import { NavbarsellerComponent } from './components/navbarseller/navbarseller.component';
+import { LayoutsellerComponent } from './components/layoutseller/layoutseller.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +34,11 @@ import { LayoutuserComponent } from './components/layoutuser/layoutuser.componen
     RegisterComponent,
     NavbaruserComponent,
     LayoutuserComponent,
+    CartComponent,
+    OrderComponent,
+    OrderingComponent,
+    NavbarsellerComponent,
+    LayoutsellerComponent,
   ],
   imports: [
     BrowserModule,
