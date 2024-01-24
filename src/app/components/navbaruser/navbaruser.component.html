@@ -3,11 +3,11 @@
         <img src="assets/logo.png" alt="Belezza">
     </div>
     <nav class="navbar-links">
-        <a [class.selected]="selectedTab === 'home'" (click)="selectTab('home')" href="home">Home</a>
-        <a [class.selected]="selectedTab === 'collection'" (click)="selectTab('collection')" href="collection">Collection</a>
+        <a [class.selected]="selectedTab === 'userhome'" (click)="selectTab('userhome')" href="userhome">Home</a>
+        <a [class.selected]="selectedTab === 'usercollection'" (click)="selectTab('usercollection')" href="usercollection">Collection</a>
         <a [class.selected]="selectedTab === 'order'" (click)="selectTab('order')" href="order">Orders</a>
-        <a [class.selected]="selectedTab === 'about'" (click)="selectTab('about')" href="about">About Us</a>
-        <a [class.selected]="selectedTab === 'contact'" (click)="selectTab('contact')" href="contact">Contact</a>
+        <a [class.selected]="selectedTab === 'userabout'" (click)="selectTab('userabout')" href="userabout">About Us</a>
+        <a [class.selected]="selectedTab === 'usercontact'" (click)="selectTab('usercontact')" href="usercontact">Contact</a>
     </nav>
     <div class="navbar-icons">
         <a href="cart"><img src="assets/cart.png" alt="Cart"></a>

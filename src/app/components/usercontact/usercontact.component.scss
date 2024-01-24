@@ -1,0 +1,146 @@
+.image-container {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    margin-bottom: -10px; 
+  }
+  
+  .image-text {
+    position: absolute;
+    top: 30%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    width: 70%;
+    text-align: left;
+    margin: 0 auto;
+  
+    .bg-text {
+        font-size: 40px;
+    }
+  
+    .black-button {
+        background-color: #2D3436;
+        color: #fff;
+        padding: 0.7rem 2rem;
+        border-radius: 0.25rem;
+        cursor: pointer;
+        border: none;
+        font-size: 1rem;
+        margin-top: 40px;
+  
+        &:hover {
+            background-color: #3742FA;
+            color: #fff;
+            border-radius: 0.25rem;
+            Padding: 0.7rem 2rem;
+            border: none;
+        }
+    }
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .list-container {
+    display: flex; 
+    align-content: center;
+    margin-left: 100px;
+    margin-top: 20px;
+  }
+  
+  .list-text {
+    flex-basis: calc(250% - 1rem); 
+    margin-bottom: 1rem;
+    margin-left: 0px;
+    margin-right: 80px;
+    margin-top: 20px;
+    align-items: center;
+    display: flex;
+  }
+  .list-text img {
+    margin-right: 10px; 
+  }
+  
+  .text-content {
+    flex-grow: 1; 
+  }
+  .container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .left-form {
+    padding: 20px;
+    margin: 20px;
+    width: 60%;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    margin-left: 100px;
+  }
+  
+  .right-form {
+    padding: 20px;
+    width: 40%;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    margin: 20px;
+    margin-right: 100px;
+  }
+  .form-heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  .form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+
+  .col {
+    flex: 1;
+    margin-right: 10px; 
+  }
+
+  .col:last-child {
+    margin-right: 0;
+  }
+
+  .form-row input,
+  .form-row textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+  }
+
+  .button1 {
+    background-color: #2D3436;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .right-form-text {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+  img {
+    width: 15px;
+    height: 15px;
+    margin-right: 15px; 
+}
+p { margin-bottom: -15px;
+    color: #000000;
+    font-size: 15px;
+}

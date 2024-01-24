@@ -29,6 +29,11 @@ import { OrderService } from './components/order.service';
 import { CustomerService } from './components/customer.service';
 import { CategoryService } from './components/category.service';
 import { HttpClientModule } from '@angular/common/http';
+import { UserhomeComponent } from './components/userhome/userhome.component';
+import { UsercollectionComponent } from './components/usercollection/usercollection.component';
+import { UseraboutComponent } from './components/userabout/userabout.component';
+import { UsercontactComponent } from './components/usercontact/usercontact.component';
+import { UserComponent } from './components/user/user.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +59,11 @@ import { HttpClientModule } from '@angular/common/http';
     SellerordersComponent,
     SellercustomersComponent,
     SellercategoriesComponent,
+    UserhomeComponent,
+    UsercollectionComponent,
+    UseraboutComponent,
+    UsercontactComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,

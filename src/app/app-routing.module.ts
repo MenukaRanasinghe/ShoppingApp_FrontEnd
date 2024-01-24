@@ -21,6 +21,11 @@ import { SellercollectionComponent } from './components/sellercollection/sellerc
 import { SellerordersComponent } from './components/sellerorders/sellerorders.component';
 import { SellercategoriesComponent } from './components/sellercategories/sellercategories.component';
 import { SellercustomersComponent } from './components/sellercustomers/sellercustomers.component';
+import { UserhomeComponent } from './components/userhome/userhome.component';
+import { UsercollectionComponent } from './components/usercollection/usercollection.component';
+import { UsercontactComponent } from './components/usercontact/usercontact.component';
+import { UseraboutComponent } from './components/userabout/userabout.component';
+import { UserComponent } from './components/user/user.component';
 
 const routes: Routes = [
   {
@@ -106,6 +111,26 @@ const routes: Routes = [
   {
     path:'sellercategories',
     component:SellercategoriesComponent
+  },
+  {
+    path:'userhome',
+    component:UserhomeComponent
+  },
+  {
+    path:'usercollection',
+    component:UsercollectionComponent
+  },
+  {
+    path:'userabout',
+    component:UseraboutComponent
+  },
+  {
+    path:'usercontact',
+    component:UsercontactComponent
+  },
+  {
+    path:'user',
+    component:UserComponent
   },
 
 ];

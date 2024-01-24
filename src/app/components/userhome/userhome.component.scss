@@ -1,0 +1,139 @@
+.image-container {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    margin-bottom: -10px; 
+  }
+  
+  .image-text {
+    position: absolute;
+    top: 30%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    width: 70%;
+    text-align: left;
+    margin: 0 auto;
+  
+    .bg-text {
+        font-size: 40px;
+    }
+  
+    .black-button {
+        background-color: #2D3436;
+        color: #fff;
+        padding: 0.7rem 2rem;
+        border-radius: 0.25rem;
+        cursor: pointer;
+        border: none;
+        font-size: 1rem;
+  
+        &:hover {
+            background-color: #3742FA;
+            color: #fff;
+            border-radius: 0.25rem;
+            Padding: 0.7rem 2rem;
+            border: none;
+        }
+    }
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .list-container {
+    display: flex; 
+    align-content: center;
+    margin-left: 100px;
+    margin-top: 20px;
+  }
+  
+  .list-text {
+    flex-basis: calc(250% - 1rem); 
+    margin-bottom: 1rem;
+    margin-left: 0px;
+    margin-right: 80px;
+    margin-top: 20px;
+    align-items: center;
+    display: flex;
+  }
+  .list-text img {
+    margin-right: 10px; 
+  }
+  
+  .text-content {
+    flex-grow: 1; 
+  }
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .part1,
+  .part2 {
+    flex: 1;
+    margin: 10px;
+    position: relative;
+  }
+  
+  .part1 img,
+  .part2 img {
+    width: 500px;
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+    margin: 30px;
+  }
+  
+  .part1 img {
+    margin-left: 100px;
+  }
+  
+  .part2 img {
+    margin-right: 100px;
+  }
+  
+  .image-texts {
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    width: 70%;
+    text-align: right;
+  }
+  .image-textz {
+    position: absolute;
+    top: 68%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    width: 70%;
+    text-align: left;
+  }
+  
+  .bg-texts {
+    font-size: 20px;
+  }
+  
+  .black-button {
+    background-color: #fff;
+              color: #000000;
+              border-color: #000000;
+              padding: 0.5rem 1rem;
+              border-radius: 0.25rem;
+              cursor: pointer;
+              left: 40%;
+    
+              &:hover {
+                  background-color: #3742FA;
+                  color: #fff;
+                  border: none;
+              }
+  }
