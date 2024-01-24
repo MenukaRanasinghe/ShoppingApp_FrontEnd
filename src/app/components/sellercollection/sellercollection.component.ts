@@ -26,7 +26,24 @@ export class SellercollectionComponent {
     console.log(`Update product clicked for ID: ${productId}`);
   }
 
-  deleteProduct(productId: number): void {
-    console.log(`Delete product clicked for ID: ${productId}`);
+  loadProducts(): void {
+    this.productService.getProducts().subscribe(data => {
+      this.products = data;
+    });
+  }
+  deleteProduct(productId: any): void {
+    const confirmation = window.confirm('Are you sure you want to delete this product?');
+    
+    if (confirmation) {
+      this.productService.deleteProduct(productId).subscribe(
+        response => {
+          console.log(`Product with ID ${productId} deleted successfully`, response);
+          this.loadProducts();
+        },
+        error => {
+          console.error(`Error deleting product with ID ${productId}`, error);
+        }
+      );
+    }
   }
 }
