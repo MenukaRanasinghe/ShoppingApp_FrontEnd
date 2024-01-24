@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -28,6 +29,7 @@ import { ProductService } from './components/product.service';
 import { OrderService } from './components/order.service';
 import { CustomerService } from './components/customer.service';
 import { CategoryService } from './components/category.service';
+import { AuthService } from './components/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { UserhomeComponent } from './components/userhome/userhome.component';
 import { UsercollectionComponent } from './components/usercollection/usercollection.component';
@@ -68,12 +70,15 @@ import { UserComponent } from './components/user/user.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [ProductService,
   OrderService,
 CustomerService,
-CategoryService],
+CategoryService,
+AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

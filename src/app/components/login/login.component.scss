@@ -63,12 +63,13 @@ legend {
   color: #ffffff;
   width: 100%;
   margin-bottom: 15px;
+  margin-top: 10px;
 }
 
 .form-label2 {
   font-size: 16px;
   width: 100%;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
   color: #ffffff;
   text-align: left;
   margin-left: 5px;
@@ -106,4 +107,9 @@ legend {
   font-size: 14px;
   margin-top: 15px;
   text-align: center;
+}
+.text-danger{
+font-size: small;
+color: #eb3b5a;
+text-align: center;
 }
