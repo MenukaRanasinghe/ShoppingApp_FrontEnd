@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { catchError } from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root'
@@ -19,4 +21,14 @@ export class CustomerService {
   addCustomer(customerData: any): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}/users`, customerData);
   }
+  deleteCustomer(customerId: any): Observable<any> {
+    return this.http.delete<any>(`${this.apiUrl}/users/${customerId}`)
+      .pipe(
+        catchError(error => {
+          console.error(`Error deleting customer with ID ${customerId}`, error);
+          throw error;
+        })
+      );
+  }
+  
 }

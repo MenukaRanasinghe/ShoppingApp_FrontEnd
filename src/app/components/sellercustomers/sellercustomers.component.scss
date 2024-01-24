@@ -21,9 +21,9 @@ body {
   
   
   table {
-    width: 80%;
+    width: 100%;
     border-collapse: collapse;
-    margin: 50px; 
+    margin: 5px; 
     justify-content: center;
   }
   
@@ -44,13 +44,6 @@ body {
     padding: 0.5rem 1rem;
     border-radius: 0.25rem;
     cursor: pointer;
-  }
-  .add{
-    background-color: #3867d6;
-    
-  }
-  .update{
-    background-color: #20bf6b;
   }
   .delete{
     background-color: #eb3b5a;

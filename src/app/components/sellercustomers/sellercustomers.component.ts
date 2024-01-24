@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { CustomerService } from '../customer.service';
+import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-sellercustomers',
@@ -18,15 +20,26 @@ export class SellercustomersComponent {
     });
   }
 
-  addCustomer(): void {
-    console.log('Add customer clicked');
+  loadCustomers(): void {
+    this.customerService.getCustomers().subscribe(data => {
+      this.customers = data;
+    });
+  }
+  deleteCustomer(customerId: any): void {
+    const confirmation = window.confirm('Are you sure you want to delete this customer?');
+    
+    if (confirmation) {
+      this.customerService.deleteCustomer(customerId).subscribe(
+        response => {
+          console.log(`Customer with ID ${customerId} deleted successfully`, response);
+          this.loadCustomers();
+        },
+        error => {
+          console.error(`Error deleting customer with ID ${customerId}`, error);
+        }
+      );
+    }
   }
 
-  updateCustomer(customerId: number): void {
-    console.log(`Update customer clicked for ID: ${customerId}`);
-  }
 
-  deleteCustomer(customerId: number): void {
-    console.log(`Delete customer clicked for ID: ${customerId}`);
-  }
 }

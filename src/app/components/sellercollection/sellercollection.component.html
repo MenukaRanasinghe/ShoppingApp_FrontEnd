@@ -19,12 +19,12 @@
       <tr *ngFor="let product of products">
         <td>{{ product.id }}</td>
         <td>{{ product.name }}</td>
-        <td>{{ product.color }}</td>
+        <td>{{ product.colour }}</td>
         <td>{{ product.description }}</td>
         <td>{{ product.price }}</td>
         <td>{{ product.quantity }}</td>
         <td>{{ product.category_id }}</td>
-        <td>{{ product.size }}</td>
+        <td>{{ product.sizes }}</td>
         <td>
           <button class="add" (click)="addProduct()">Add</button>
           <button class="update" (click)="updateProduct(product.id)">Update</button>
