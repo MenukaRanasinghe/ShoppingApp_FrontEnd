@@ -19,6 +19,11 @@ import { OrderComponent } from './components/order/order.component';
 import { OrderingComponent } from './components/ordering/ordering.component';
 import { NavbarsellerComponent } from './components/navbarseller/navbarseller.component';
 import { LayoutsellerComponent } from './components/layoutseller/layoutseller.component';
+import { SellerhomeComponent } from './components/sellerhome/sellerhome.component';
+import { SellercollectionComponent } from './components/sellercollection/sellercollection.component';
+import { SellerordersComponent } from './components/sellerorders/sellerorders.component';
+import { SellercustomersComponent } from './components/sellercustomers/sellercustomers.component';
+import { SellercategoriesComponent } from './components/sellercategories/sellercategories.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +44,11 @@ import { LayoutsellerComponent } from './components/layoutseller/layoutseller.co
     OrderingComponent,
     NavbarsellerComponent,
     LayoutsellerComponent,
+    SellerhomeComponent,
+    SellercollectionComponent,
+    SellerordersComponent,
+    SellercustomersComponent,
+    SellercategoriesComponent,
   ],
   imports: [
     BrowserModule,

@@ -16,6 +16,11 @@ import { OrderComponent } from './components/order/order.component';
 import { OrderingComponent } from './components/ordering/ordering.component';
 import { NavbarsellerComponent } from './components/navbarseller/navbarseller.component';
 import { LayoutsellerComponent } from './components/layoutseller/layoutseller.component';
+import { SellerhomeComponent } from './components/sellerhome/sellerhome.component';
+import { SellercollectionComponent } from './components/sellercollection/sellercollection.component';
+import { SellerordersComponent } from './components/sellerorders/sellerorders.component';
+import { SellercategoriesComponent } from './components/sellercategories/sellercategories.component';
+import { SellercustomersComponent } from './components/sellercustomers/sellercustomers.component';
 
 const routes: Routes = [
   {
@@ -82,7 +87,26 @@ const routes: Routes = [
     path:'layoutseller',
     component:LayoutsellerComponent
   },
-
+  {
+    path:'sellerhome',
+    component:SellerhomeComponent
+  },
+  {
+    path:'sellercollection',
+    component:SellercollectionComponent
+  },
+  {
+    path:'sellerorders',
+    component:SellerordersComponent
+  },
+  {
+    path:'sellercustomers',
+    component:SellercustomersComponent
+  },
+  {
+    path:'sellercategories',
+    component:SellercategoriesComponent
+  },
 
 ];
 
