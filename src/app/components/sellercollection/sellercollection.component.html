@@ -1,38 +1,173 @@
+<!-- app-layoutseller.component.html -->
+
 <app-layoutseller>
-    <body>
-        <div class="table-container">
-<table>
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Color</th>
-        <th>Description</th>
-        <th>Price</th>
-        <th>Quantity</th>
-        <th>Category ID</th>
-        <th>Size</th>
-        <th>Options</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let product of products">
-        <td>{{ product.id }}</td>
-        <td>{{ product.name }}</td>
-        <td>{{ product.colour }}</td>
-        <td>{{ product.description }}</td>
-        <td>{{ product.price }}</td>
-        <td>{{ product.quantity }}</td>
-        <td>{{ product.category_id }}</td>
-        <td>{{ product.sizes }}</td>
-        <td>
-          <button class="add" (click)="addProduct()">Add</button>
-          <button class="update" (click)="updateProduct(product.id)">Update</button>
-          <button class="delete" (click)="deleteProduct(product.id)">Delete</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <body>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Color</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Category ID</th>
+            <th>Size</th>
+            <th>Photo</th>
+            <th>Options</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of products">
+            <td>{{ product.id }}</td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.colour }}</td>
+            <td>{{ product.description }}</td>
+            <td>{{ product.price }}</td>
+            <td>{{ product.quantity }}</td>
+            <td>{{ product.category_id }}</td>
+            <td>{{ product.sizes }}</td>
+            <td>{{ product.photo }}</td>
+            <td>
+              <button class="add" (click)="openAddProductModal()">Add</button>
+              <button class="update" (click)="updateProduct(product.id)">Update</button>
+              <button class="delete" (click)="deleteProduct(product.id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+<!-- your.component.html -->
+<!--<div *ngIf="isNewProductModalOpen" class="popup-modal">
+  <div class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Add New Product</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form #form="ngForm" (ngSubmit)="saveProduct()">
+            <table>
+              <tr>
+                <td><label for="id">ID:</label></td>
+                <td><input matInput id="id" [(ngModel)]="newProduct.id" placeholder="ID" required></td>
+              </tr>
+              <tr>
+                <td><label for="name">Name:</label></td>
+                <td><input matInput id="name" [(ngModel)]="newProduct.name" placeholder="Name" required></td>
+              </tr>
+              <tr>
+                <td><label for="colour">Color:</label></td>
+                <td><input matInput id="colour" [(ngModel)]="newProduct.colour" placeholder="Color"></td>
+              </tr>
+              <tr>
+                <td><label for="description">Description:</label></td>
+                <td><input matInput id="description" [(ngModel)]="newProduct.description" placeholder="Description"></td>
+              </tr>
+              <tr>
+                <td><label for="price">Price:</label></td>
+                <td><input matInput id="price" [(ngModel)]="newProduct.price" placeholder="Price"></td>
+              </tr>
+              <tr>
+                <td><label for="quantity">Quantity:</label></td>
+                <td><input matInput id="quantity" [(ngModel)]="newProduct.quantity" placeholder="Quantity"></td>
+              </tr>
+              <tr>
+                <td><label for="category_id">Category ID:</label></td>
+                <td><input matInput id="category_id" [(ngModel)]="newProduct.category_id" placeholder="Category ID"></td>
+              </tr>
+              <tr>
+                <td><label for="sizes">Sizes:</label></td>
+                <td><input matInput id="sizes" [(ngModel)]="newProduct.sizes" placeholder="Sizes"></td>
+              </tr>
+              <tr>
+                <td><label for="photo">Photo:</label></td>
+                <td><input matInput type="file" (change)="handlePhotoChange($event)" accept="image/*"></td>
+              </tr>
+            </table>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" mat-button (click)="saveProduct()">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-</body>
+
+-->
+<!-- your.component.html -->
+<!-- your.component.html -->
+<div *ngIf="isNewProductModalOpen" class="popup-modal">
+  <div class="modal">
+    <div class="modal-header">
+      <h4 class="modal-title">Add New Product</h4>
+      <button type="button" class="btn-close" (click)="closeModal()" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form #form="ngForm" (ngSubmit)="saveProduct(form)">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="id">ID:</label>
+            <input id="id" name="id" [(ngModel)]="newProduct.id" class="form-control" placeholder="ID" required>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="name">Name:</label>
+            <input id="name" name="name" [(ngModel)]="newProduct.name" class="form-control" placeholder="Name" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="colour">Color:</label>
+            <input id="colour" name="colour" [(ngModel)]="newProduct.colour" class="form-control" placeholder="Color">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="description">Description:</label>
+            <input id="description" name="description" [(ngModel)]="newProduct.description" class="form-control" placeholder="Description">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="price">Price:</label>
+            <input id="price" name="price" [(ngModel)]="newProduct.price" class="form-control" placeholder="Price">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="quantity">Quantity:</label>
+            <input id="quantity" name="quantity" [(ngModel)]="newProduct.quantity" class="form-control" placeholder="Quantity">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="category_id">Category ID:</label>
+            <input id="category_id" name="category_id" [(ngModel)]="newProduct.category_id" class="form-control" placeholder="Category ID">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="sizes">Sizes:</label>
+            <input id="sizes" name="sizes" [(ngModel)]="newProduct.sizes" class="form-control" placeholder="Sizes">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label for="photo">Photo:</label>
+            <input type="file" name="file" (change)="handlePhotoChange($event)" class="form-control" accept="image/*">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="resetNewProduct(form)">Clear</button>
+          <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+  </body>
 </app-layoutseller>

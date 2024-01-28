@@ -14,7 +14,7 @@
         <td>{{ category.id }}</td>
         <td>{{ category.name }}</td>
         <td>
-          <button class="add" (click)="addCategory()">Add</button>
+          <button class="add" (click)="openAddCategoryModal()">Add</button>
           <button class="update" (click)="updateCategory(category.id)">Update</button>
           <button class="delete" (click)="deleteCategory(category.id)">Delete</button>
         </td>
@@ -22,6 +22,38 @@
     </tbody>
   </table>
 </div>
+
+<div *ngIf="isNewCategoryModalOpen" class="popup-modal">
+  <div class="modal">
+    <div class="modal-header">
+      <h4 class="modal-title">Add New Product</h4>
+      <button type="button" class="btn-close" (click)="closeModal()" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form #form="ngForm" (ngSubmit)="saveCategory(form)">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="id">ID:</label>
+            <input id="id" name="id" [(ngModel)]="newCategory.id" class="form-control" placeholder="ID" required>
+          </div>      
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="name">Name:</label>
+            <input id="name" name="name" [(ngModel)]="newCategory.name" class="form-control" placeholder="Name" required>
+          </div>  
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="resetNewCategory(form)">Clear</button>
+          <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
 </body>
 </app-layoutseller>
 

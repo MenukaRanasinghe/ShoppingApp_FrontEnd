@@ -56,3 +56,109 @@ body {
     background-color: #eb3b5a;
   }
   
+
+  .popup-modal {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    .modal {
+      background-color: #fff;
+      width: 600px;  // Adjust the width as needed
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  
+      .modal-header {
+        background-color: #2D3436;
+        color: #fff;
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+  
+        h4 {
+          margin: 0;
+          font-size: 18px;
+        }
+  
+        .btn-close {
+          background: none;
+          border: none;
+          color: #fff;
+          cursor: pointer;
+          font-size: 20px;
+  
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+  
+      .modal-body {
+        padding: 20px;
+  
+        .form-row {
+          display: flex;
+          justify-content: space-between;
+  
+          .form-group {
+            width: calc(50% - 10px);  // Adjust the width and margin as needed
+            margin-right: 10px;
+          }
+        }
+  
+        label {
+          display: block;
+          margin-bottom: 5px;
+          font-weight: bold;
+          color: #333;
+        }
+  
+        .form-control {
+          width: 100%;
+          padding: 8px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+        }
+      }
+  
+      .modal-footer {
+        background-color: #f8f9fa;
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+  
+        button {
+          border-radius: 4px;
+          padding: 8px 15px;
+          cursor: pointer;
+        }
+  
+        .btn-primary {
+          background-color: #3742FA;
+          color: #fff;
+  
+          &:hover {
+            background-color: lighten($color: #3742FA, $amount: 20%);
+          }
+        }
+  
+        .btn-secondary {
+          background-color: #2D3436;
+          color: #fff;
+  
+          &:hover {
+            background-color: lighten($color: #2D3436, $amount: 20%);
+          }
+        }
+      }
+    }
+  }
+  

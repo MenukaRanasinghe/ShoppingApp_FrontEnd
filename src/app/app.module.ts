@@ -2,6 +2,15 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatIconModule } from '@angular/material/icon';
+import { MatFileUploadModule } from 'angular-material-fileupload';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -36,6 +45,7 @@ import { UsercollectionComponent } from './components/usercollection/usercollect
 import { UseraboutComponent } from './components/userabout/userabout.component';
 import { UsercontactComponent } from './components/usercontact/usercontact.component';
 import { UserComponent } from './components/user/user.component';
+
 
 @NgModule({
   declarations: [
@@ -73,6 +83,15 @@ import { UserComponent } from './components/user/user.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    MatInputModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatIconModule,
+    MatSnackBarModule,
+    BrowserAnimationsModule,
+    NoopAnimationsModule,
+    
   ],
   providers: [ProductService,
   OrderService,
