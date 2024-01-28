@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { OrderService } from '../order.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-sellerorders',
@@ -10,7 +11,7 @@ export class SellerordersComponent {
   orders: any[] = [];
   orderCount: number | undefined;
 
-  constructor(private orderService: OrderService) {}
+  constructor(private orderService: OrderService, private snackBar: MatSnackBar) {}
 
   ngOnInit(): void {
     this.orderService.getOrders().subscribe(data => {
@@ -38,10 +39,17 @@ export class SellerordersComponent {
     if (confirmation) {
       this.orderService.deleteOrder(orderId).subscribe(
         response => {
+          this.snackBar.open(`Order with ID ${orderId} deleted successfully`, 'Close', {
+            duration: 3000,
+          });
           console.log(`Order with ID ${orderId} deleted successfully`, response);
           this.loadOrders();
         },
         error => {
+          this.snackBar.open(`Error deleting order with ID ${orderId}`, 'Close', {
+            duration: 3000,
+            panelClass: ['error-snackbar'] 
+          });
           console.error(`Error deleting order with ID ${orderId}`, error);
         }
       );

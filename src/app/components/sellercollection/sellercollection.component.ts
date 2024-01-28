@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ProductService } from '../product.service';
 import { NgForm } from '@angular/forms';
 import { HttpErrorResponse } from '@angular/common/http';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-sellercollection',
@@ -24,7 +25,7 @@ export class SellercollectionComponent {
     sizes: ''
   };
 
-  constructor(private productService: ProductService) {}
+  constructor(private productService: ProductService, private snackBar: MatSnackBar) {}
 
   ngOnInit(): void {
     this.loadProducts();
@@ -63,10 +64,17 @@ export class SellercollectionComponent {
     if (confirmation) {
       this.productService.deleteProduct(productId).subscribe(
         response => {
+          this.snackBar.open(`Product with ID ${productId} deleted successfully`, 'Close', {
+            duration: 3000,
+          });
           console.log(`Product with ID ${productId} deleted successfully`, response);
           this.loadProducts();
         },
         error => {
+          this.snackBar.open(`Error deleting product with ID ${productId}`, 'Close', {
+            duration: 3000,
+            panelClass: ['error-snackbar'] 
+          });
           console.error(`Error deleting product with ID ${productId}`, error);
         }
       );
@@ -79,21 +87,34 @@ export class SellercollectionComponent {
       // Update existing product
       this.productService.updateProduct(this.selectedProductId, this.newProduct).subscribe(
         response => {
+          this.snackBar.open(`Product with ID ${this.selectedProductId} updated successfully`, 'Close', {
+            duration: 3000,
+          });
           console.log(`Product with ID ${this.selectedProductId} updated successfully`, response);
           this.loadProducts();
         },
         error => {
+          this.snackBar.open(`Error updating product with ID ${this.selectedProductId}`, 'Close', {
+            duration: 3000,
+            panelClass: ['error-snackbar']
+          });
           console.error(`Error updating product with ID ${this.selectedProductId}`, error);
         }
       );
     } else {
-      // Add new product
       this.productService.addProduct(this.newProduct).subscribe(
         response => {
+          this.snackBar.open('New product added successfully', 'Close', {
+            duration: 3000,
+          });
           console.log('New product added successfully', response);
           this.loadProducts();
         },
         error => {
+          this.snackBar.open('Error adding new product', 'Close', {
+            duration: 3000,
+            panelClass: ['error-snackbar']
+          });
           console.error('Error adding new product', error);
         }
       );

@@ -129,7 +129,7 @@ export class SellercategoriesComponent {
   }
   resetNewCategory(form?: NgForm) {
     this.newCategory = {
-      ...this.newCategory,  // Keep existing id
+      ...this.newCategory,
       name: ''
     };
     if(form){
