@@ -20,10 +20,9 @@ export class CategoryService {
     return this.http.get<any>(`${this.apiUrl}/categories/${categoryId}`);
   }
   addCategory(categoryData: any): Observable<any> {
-    // Remove FormData and directly send categoryData
     return this.http.post<any>(`${this.apiUrl}/categories`, categoryData, {
       headers: new HttpHeaders({
-        'Content-Type': 'application/json', // Change to 'application/json'
+        'Content-Type': 'application/json', 
       }),
     })
     .pipe(

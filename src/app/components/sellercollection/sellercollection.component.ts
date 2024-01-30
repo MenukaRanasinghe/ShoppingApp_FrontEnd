@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../product.service';
 import { NgForm } from '@angular/forms';
 import { HttpErrorResponse } from '@angular/common/http';
@@ -9,7 +9,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   templateUrl: './sellercollection.component.html',
   styleUrls: ['./sellercollection.component.scss']
 })
-export class SellercollectionComponent {
+export class SellercollectionComponent implements OnInit{
 
   products: any[] = [];
   isNewProductModalOpen = false;
@@ -21,11 +21,15 @@ export class SellercollectionComponent {
     description: '',
     price: null,
     quantity: null,
-    category_id: null,
-    sizes: ''
+    category_id: null,  
+    sizes: '',
+    photo: null
   };
+  
 
-  constructor(private productService: ProductService, private snackBar: MatSnackBar) {}
+  constructor(private productService: ProductService, private snackBar: MatSnackBar) {
+  
+  }
 
   ngOnInit(): void {
     this.loadProducts();
@@ -83,64 +87,72 @@ export class SellercollectionComponent {
 
   // Method to save the new product or update an existing one
   saveProduct(form: NgForm) {
-    if (this.selectedProductId !== null) {
-      // Update existing product
-      this.productService.updateProduct(this.selectedProductId, this.newProduct).subscribe(
-        response => {
-          this.snackBar.open(`Product with ID ${this.selectedProductId} updated successfully`, 'Close', {
-            duration: 3000,
-          });
-          console.log(`Product with ID ${this.selectedProductId} updated successfully`, response);
-          this.loadProducts();
-        },
-        error => {
-          this.snackBar.open(`Error updating product with ID ${this.selectedProductId}`, 'Close', {
-            duration: 3000,
-            panelClass: ['error-snackbar']
-          });
-          console.error(`Error updating product with ID ${this.selectedProductId}`, error);
-        }
-      );
-    } else {
-      this.productService.addProduct(this.newProduct).subscribe(
-        response => {
-          this.snackBar.open('New product added successfully', 'Close', {
-            duration: 3000,
-          });
-          console.log('New product added successfully', response);
-          this.loadProducts();
-        },
-        error => {
-          this.snackBar.open('Error adding new product', 'Close', {
-            duration: 3000,
-            panelClass: ['error-snackbar']
-          });
-          console.error('Error adding new product', error);
-        }
-      );
+    // Determine the operation (update or add)
+    const operation = this.selectedProductId !== null ? 'update' : 'add';
+  
+    const operations = {
+      'update': {
+        successMessage: `Product with ID ${this.selectedProductId} updated successfully`,
+        errorMessage: `Error updating product with ID ${this.selectedProductId}`,
+        serviceMethod: (id: number, product: any) => this.productService.updateProduct(id, product),
+      },
+      'add': {
+        successMessage: 'New product added successfully',
+        errorMessage: 'Error adding new product',
+        serviceMethod: (product: any) => this.productService.addProduct(product),
+      },
+    };
+  
+    const { successMessage, errorMessage, serviceMethod } = operations[operation];
+  
+    if (operation === 'update' && typeof this.selectedProductId !== 'number') {
+      // Handle the case where this.selectedProductId is not a number
+      console.error('Invalid product ID');
+      return;
     }
-
+  
+    // Use 'number' as the type for product ID
+    serviceMethod(this.selectedProductId as number, this.newProduct as any).subscribe(
+      response => {
+        // Handle success
+        this.snackBar.open(successMessage, 'Close', { duration: 3000 });
+        console.log(successMessage, response);
+        this.loadProducts();
+      },
+      error => {
+        // Handle error
+        this.snackBar.open(errorMessage, 'Close', { duration: 3000, panelClass: ['error-snackbar'] });
+        console.error(errorMessage, error);
+      }
+    );
+  
+    // Close the modal or perform any other necessary cleanup
     this.closeModal();
   }
+  
+  
+  
 
   // Method to reset the new product form
   resetNewProduct(form?: NgForm) {
     this.selectedProductId = null;
     this.newProduct = {
-      id: this.getNextProductId(), // Auto-fill ID when opening the modal
+      id: this.getNextProductId(),
       name: '',
       colour: '',
       description: '',
       price: null,
       quantity: null,
-      category_id: null,
-      sizes: ''
+      category_id: null,  // Set to null or a default value
+      sizes: '',
+      photo: null  // Add this line to include the 'photo' property
     };
-    if(form){
+  
+    if (form) {
       form.resetForm();
     }
   }
-
+  
   openAddProductModal() {
     this.addProduct(); // Directly call addProduct to ensure proper reset
     console.log('Opening modal or form for adding a new product');
@@ -152,8 +164,9 @@ export class SellercollectionComponent {
 
   handlePhotoChange(event: any): void {
     const file = event.target.files[0];
-    // Handle photo change logic
+    this.newProduct.photo = file;
   }
+  
 
   getNextProductId(): number {
     const maxId = Math.max(...this.products.map(product => product.id), 0);

@@ -1,1 +1,20 @@
-<p>usercollection works!</p>
+<!-- usercollection.component.html -->
+
+<app-layoutuser>
+  <body>
+  <div class="container">
+    <div *ngFor="let product of userCollectionProducts" class="card">
+      <img [src]="product.photo_url" class="card-img-top" alt="{{ product.name }}">
+      <div class="card-body">
+        <h5 class="card-title">{{ product.name }}</h5>
+        <p class="card-text">{{ product.description }}</p>
+        <p class="card-text">Price: Rs: {{ product.price }}</p>
+      </div>
+      <div class="card-footer">
+        <a href="cart"><button class="btn btn-secondary float-left">Add to Cart</button></a>
+        <a href="order"><button class="btn btn-primary float-right">Order</button></a>
+      </div>
+    </div>
+  </div>
+  </body>
+</app-layoutuser>

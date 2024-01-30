@@ -28,7 +28,7 @@
             <td>{{ product.quantity }}</td>
             <td>{{ product.category_id }}</td>
             <td>{{ product.sizes }}</td>
-            <td>{{ product.photo }}</td>
+            <td>{{ product.photo ? product.photo.name : 'No Photo' }}</td>
             <td>
               <button class="add" (click)="openAddProductModal()">Add</button>
               <button class="update" (click)="updateProduct(product.id)">Update</button>
@@ -105,7 +105,7 @@
 <div *ngIf="isNewProductModalOpen" class="popup-modal">
   <div class="modal">
     <div class="modal-header">
-      <h4 class="modal-title">Add New Product</h4>
+      <h4 class="modal-title">{{ selectedProductId !== null ? 'Update' : 'Add New' }} Product</h4>
       <button type="button" class="btn-close" (click)="closeModal()" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
@@ -115,7 +115,7 @@
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="id">ID:</label>
-            <input id="id" name="id" [(ngModel)]="newProduct.id" class="form-control" placeholder="ID" required>
+            <input id="id" name="id" [ngModel]="newProduct.id" (ngModelChange)="newProduct.id = $event" class="form-control" placeholder="ID" required>
           </div>
           <div class="form-group col-md-6">
             <label for="name">Name:</label>
