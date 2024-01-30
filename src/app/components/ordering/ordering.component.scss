@@ -1,0 +1,78 @@
+.body{
+    height: fit-content;
+}
+
+.card {
+    display: flex;
+    flex-direction: column; /* Adjust to column direction */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    text-align: center; /* Center text within the card */
+    margin: auto; /* Center the card within its container */
+    max-width: 600px; /* Adjust as needed */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    overflow: hidden;
+    height:500px;
+    
+  }
+  
+  .card-img-top {
+    max-width: 100%; /* Adjust to fill the container */
+    object-fit: cover;
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  .card-footer {
+    margin-top: 20px;
+  }
+  
+
+  
+  /* Optional: Styles for the message box */
+  .message-box {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+  }
+  
+  /* Add animation for a fade-in effect */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Apply animation to the message box */
+  .message-box.show {
+    display: block;
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  .btn-primary {
+    background-color: #2D3436;
+    color: white;
+    border: none;
+    &:hover {
+      background-color: lighten($color: #2D3436, $amount: 20%);
+    }
+  }
+  
+  button {
+    border-radius: 4px;
+    padding: 8px 15px;
+    cursor: pointer;
+  }
+  

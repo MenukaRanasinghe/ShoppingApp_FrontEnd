@@ -26,4 +26,9 @@ export class OrderService {
         })
       );
   }
+
+  createOrder(order: any): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/orders`, order);
+  }
+  
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../product.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-usercollection',
@@ -9,7 +10,7 @@ import { ProductService } from '../product.service';
 export class UsercollectionComponent implements OnInit {
   userCollectionProducts: any[] = [];
 
-  constructor(private productService: ProductService) {}
+  constructor(private productService: ProductService,private router: Router) {}
 
   ngOnInit(): void {
     this.loadProducts();
@@ -24,5 +25,12 @@ export class UsercollectionComponent implements OnInit {
         console.error('Error fetching products:', error);
       }
     );
+  }
+  addToCart(product: any) {
+    this.router.navigate(['/cart'], { state: { product } });
+  }
+
+  orderProduct(product: any) {
+    this.router.navigate(['/ordering', { product: JSON.stringify(product) }]);
   }
 }

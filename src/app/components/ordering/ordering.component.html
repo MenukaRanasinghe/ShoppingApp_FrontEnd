@@ -1,1 +1,28 @@
-<p>ordering works!</p>
+<!-- order.component.html -->
+
+<app-layoutuser>
+    <body>
+    <div class="container">
+      <div class="card">
+        <img [src]="selectedProduct?.photo_url" class="card-img-top" alt="{{ selectedProduct?.name }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ selectedProduct?.name }}</h5>
+          <p class="card-text">{{ selectedProduct?.description }}</p>
+          <p class="card-text">{{ selectedProduct?.sizes }}</p>
+          <p class="card-text">Price: Rs: {{ selectedProduct?.price }}</p>
+          <p class="card-text">Quantity: {{ quantity }}</p>
+          <p class="card-text">Total: Rs: {{ total }}</p>
+          <button class="btn btn-secondary" (click)="decreaseQuantity()">-</button>
+          <button class="btn btn-secondary" (click)="increaseQuantity()">+</button>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-primary btn-confirm-order" (click)="confirmOrder()">Confirm Order</button>
+        </div>
+      </div>
+    </div>
+    <div class="message-box" [ngClass]="{'show': isOrderPlaced}">
+        Order placed successfully!
+      </div>
+</body>
+  </app-layoutuser>
+  
