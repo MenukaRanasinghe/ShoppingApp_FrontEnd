@@ -26,7 +26,7 @@
 <div *ngIf="isNewCategoryModalOpen" class="popup-modal">
   <div class="modal">
     <div class="modal-header">
-      <h4 class="modal-title">Add New Product</h4>
+      <h4 class="modal-title">{{ selectedCategoryId !== null ? 'Update' : 'Add New' }} Product</h4>
       <button type="button" class="btn-close" (click)="closeModal()" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>

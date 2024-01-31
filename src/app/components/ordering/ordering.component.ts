@@ -1,4 +1,3 @@
-// order.component.ts
 
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -40,26 +39,22 @@ export class OrderingComponent implements OnInit {
   }
 
   confirmOrder() {
-    // Create an order object with relevant details
     const newOrder = {
-      id: null, // This will be assigned by the server
+      id: null,
       total: this.total,
-      createdAt: null, // This will be assigned by the server
-      updatedAt: null, // This will be assigned by the server
-      user: null, // Assign the actual user if applicable
-      products: [this.selectedProduct], // Add the selected product to the order
+      createdAt: null,
+      updatedAt: null,
+      user: null,
+      products: [this.selectedProduct],
     };
   
-    // Call the OrderService to save the order
     this.orderService.createOrder(newOrder).subscribe(
       (response) => {
         console.log('Order placed successfully:', response);
         this.isOrderPlaced = true;
   
-        // Display the message box for 3 seconds (3000 milliseconds)
         setTimeout(() => {
-          this.isOrderPlaced = false; // Hide the message box after 3 seconds
-          // Navigate to a different page after placing the order
+          this.isOrderPlaced = false;
           this.router.navigate(['/order']);
         }, 3000);
       },
@@ -68,6 +63,7 @@ export class OrderingComponent implements OnInit {
       }
     );
   }
+  
   
   
 }

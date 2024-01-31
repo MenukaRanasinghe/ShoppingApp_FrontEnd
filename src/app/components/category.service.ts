@@ -48,7 +48,7 @@ export class CategoryService {
     return this.http.delete<any>(`${this.apiUrl}/categories/${categoryId}`)
       .pipe(
         catchError(error => {
-          console.error(`Error deleting product with ID ${categoryId}`, error);
+          console.error(`Error deleting category with ID ${categoryId}`, error);
           throw error;
         })
       );

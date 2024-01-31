@@ -64,6 +64,7 @@ export class SellercategoriesComponent {
       );
     }
   }
+  
   updateCategory(categoryId: number): void {
     this.selectedCategoryId = categoryId;
     const selectedCategory = this.categories.find(product => product.id === categoryId);
