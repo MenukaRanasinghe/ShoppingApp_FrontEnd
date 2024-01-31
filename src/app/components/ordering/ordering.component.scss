@@ -4,12 +4,12 @@
 
 .card {
     display: flex;
-    flex-direction: column; /* Adjust to column direction */
-    align-items: center; /* Center items horizontally */
-    justify-content: center; /* Center items vertically */
-    text-align: center; /* Center text within the card */
-    margin: auto; /* Center the card within its container */
-    max-width: 600px; /* Adjust as needed */
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
+    margin: auto; 
+    max-width: 600px; 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-radius: 15px;
     overflow: hidden;
@@ -18,7 +18,7 @@
   }
   
   .card-img-top {
-    max-width: 100%; /* Adjust to fill the container */
+    max-width: 100%;
     object-fit: cover;
   }
   
@@ -31,8 +31,6 @@
   }
   
 
-  
-  /* Optional: Styles for the message box */
   .message-box {
     display: none;
     position: fixed;
@@ -44,8 +42,6 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-radius: 15px;
   }
-  
-  /* Add animation for a fade-in effect */
   @keyframes fadeIn {
     from {
       opacity: 0;
@@ -55,7 +51,6 @@
     }
   }
   
-  /* Apply animation to the message box */
   .message-box.show {
     display: block;
     animation: fadeIn 0.5s ease-out;

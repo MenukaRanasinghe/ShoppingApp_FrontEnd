@@ -30,7 +30,7 @@ export class ProductService {
   addProduct(productData: any): Observable<any> {
     const formData: FormData = this.createFormData(productData);
 
-    // No need for explicit 'Accept' header for FormData
+    
     const options = {};
 
     return this.http.post<any>(`${this.apiUrl}/products`, formData, options)

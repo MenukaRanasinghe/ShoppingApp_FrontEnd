@@ -40,7 +40,7 @@ export class SellercollectionComponent implements OnInit{
   }
 
   addProduct(): void {
-    this.resetNewProduct(); // Reset newProduct when opening the modal
+    this.resetNewProduct(); 
     this.isNewProductModalOpen = true;
   }
 
@@ -49,7 +49,6 @@ export class SellercollectionComponent implements OnInit{
     const selectedProduct = this.products.find(product => product.id === productId);
 
     if (selectedProduct) {
-      // Copy selected product data to the new product for editing
       this.newProduct = { ...selectedProduct };
       this.isNewProductModalOpen = true;
     }
@@ -94,7 +93,7 @@ export class SellercollectionComponent implements OnInit{
  
   saveProduct(form: NgForm) {
     if (this.selectedProductId !== null) {
-      // Update existing product
+    
       this.productService.updateProduct(this.selectedProductId, this.newProduct).subscribe(
         response => {
           this.snackBar.open(`Product with ID ${this.selectedProductId} updated successfully`, 'Close', {
@@ -112,7 +111,6 @@ export class SellercollectionComponent implements OnInit{
         }
       );
     } else {
-      // Add new product
       this.productService.addProduct(this.newProduct).subscribe(
         response => {
           this.snackBar.open('New product added successfully', 'Close', {

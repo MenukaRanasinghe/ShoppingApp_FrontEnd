@@ -8,7 +8,7 @@ import { ChangeDetectorRef } from '@angular/core';
   styleUrls: ['./navbaruser.component.scss']
 })
 export class NavbaruserComponent {
-  selectedTab: string = ''; // Initialize as needed
+  selectedTab: string = ''; 
   showLogoutButton: boolean = false;
   showConfirmation: boolean = false;
 
@@ -16,7 +16,6 @@ export class NavbaruserComponent {
 
   selectTab(tab: string): void {
     this.selectedTab = tab;
-    // Add logic to navigate to the selected tab
   }
 
   toggleLogoutButton(): void {
@@ -29,15 +28,11 @@ export class NavbaruserComponent {
    
 
   confirmLogout(): void {
-    // Perform logout logic
     console.log('Logout confirmed!');
-    // You can add more logout logic here
   
-    // Navigate to the login page
     this.router.navigate(['/login']);
   
-    // Reset state
-    this.showConfirmation = false; // Set it to false to hide the confirmation modal
+    this.showConfirmation = false; 
     this.showLogoutButton = false;
   }
   

@@ -57,7 +57,7 @@ body {
     background-color: #eb3b5a;
   }
   
-  /* Add this to your component's stylesheet or global styles */
+
 
 .popup-modal {
   display: flex;
@@ -89,10 +89,6 @@ body {
 
 
 
-
-
-// your.component.scss
-
 .popup-modal {
   background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
@@ -106,7 +102,7 @@ body {
 
   .modal {
     background-color: #fff;
-    width: 600px;  // Adjust the width as needed
+    width: 600px; 
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
@@ -145,7 +141,7 @@ body {
         justify-content: space-between;
 
         .form-group {
-          width: calc(50% - 10px);  // Adjust the width and margin as needed
+          width: calc(50% - 10px); 
           margin-right: 10px;
         }
       }
