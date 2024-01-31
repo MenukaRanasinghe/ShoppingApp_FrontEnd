@@ -1,1 +1,22 @@
-<p>cart works!</p>
+
+<app-layoutuser>
+    <body>
+    <div class="container">
+      <div class="card">
+        <img [src]="selectedProduct?.photo_url" class="card-img-top" alt="{{ selectedProduct?.name }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ selectedProduct?.name }}</h5>
+          <p class="card-text">{{ selectedProduct?.description }}</p>
+          <p class="card-text">{{ selectedProduct?.sizes }}</p>
+          <p class="card-text">Price: Rs: {{ selectedProduct?.price }}</p>
+          <p class="card-text">Quantity: {{ quantity }}</p>
+          <p class="card-text">Total: Rs: {{ total }}</p>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-primary btn-confirm-order" (click)="Order(product)">Order</button>
+        </div>
+      </div>
+    </div>
+</body>
+  </app-layoutuser>
+  

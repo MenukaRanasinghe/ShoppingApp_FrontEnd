@@ -61,4 +61,49 @@
     gap: 30px; 
     margin-right: 20px;
 }
-  
+.user-container {
+  cursor: pointer;
+  position: relative;
+
+  img {
+    margin-right: 10px;
+  }
+
+  .logout-btn {
+    background-color: #dad0d0;
+              color: #000000;
+              border:none;
+              padding: 0.5rem 1rem;
+              border-radius: 0.25rem;
+              cursor: pointer;
+  }
+
+  &:hover .logout-btn {
+    display: block;
+  }
+}
+
+.btn-yes {
+justify-content: left;
+width: 40%;
+padding: 5px;
+margin: 10px;
+}
+.btn-no{
+justify-content: right;
+width: 40%;
+padding: 5px;
+margin: 10px;
+}
+
+
+.confirmation-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+}

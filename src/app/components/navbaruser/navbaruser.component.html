@@ -10,8 +10,19 @@
         <a [class.selected]="selectedTab === 'usercontact'" (click)="selectTab('usercontact')" href="usercontact">Contact</a>
     </nav>
     <div class="navbar-icons">
-        <a href="cart"><img src="assets/cart.png" alt="Cart"></a>
-        <a href="user"><img src="assets/user.png" alt="User"></a>
-    </div>
-</header>
+        <a href="cart"><img src="assets/cart.png" alt="Cart" ></a>
+        <!-- your-component.component.html -->
 
+
+        <div class="user-container" (click)="toggleLogoutButton()">
+            <img src="assets/user.png" alt="User">
+            <button *ngIf="showLogoutButton" class="logout-btn" (click)="toggleConfirmation()">Logout</button>
+          </div>
+      
+          <div *ngIf="showConfirmation" class="confirmation-modal">
+            <p>Are you sure you want to logout?</p>
+            <button class="btn btn-yes" (click)="confirmLogout()">Yes</button>
+            <button class="btn btn-no" (click)="cancelConfirmation()">No</button>
+          </div>
+        </div>
+      </header>

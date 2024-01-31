@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../product.service';
 import { Router } from '@angular/router';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-usercollection',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 export class UsercollectionComponent implements OnInit {
   userCollectionProducts: any[] = [];
 
-  constructor(private productService: ProductService,private router: Router) {}
+  constructor(private productService: ProductService,private router: Router,private cartService: CartService) {}
 
   ngOnInit(): void {
     this.loadProducts();
@@ -26,11 +27,13 @@ export class UsercollectionComponent implements OnInit {
       }
     );
   }
-  addToCart(product: any) {
-    this.router.navigate(['/cart'], { state: { product } });
-  }
+
 
   orderProduct(product: any) {
     this.router.navigate(['/ordering', { product: JSON.stringify(product) }]);
   }
+  addToCart(product: any): void {
+    this.router.navigate(['/cart', { product: JSON.stringify(product) }]);
+  }
+
 }
