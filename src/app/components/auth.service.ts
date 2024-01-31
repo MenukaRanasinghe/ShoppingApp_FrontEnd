@@ -16,5 +16,14 @@ export class AuthService {
     return this.http.post(`${this.apiUrl}/login`, loginData);
   }
 
+  loggedInUser: any;
+
+  setLoggedInUser(user: any): void {
+    this.loggedInUser = user;
+  }
+
+  getLoggedInUser(): any {
+    return this.loggedInUser;
+  }
  
 }

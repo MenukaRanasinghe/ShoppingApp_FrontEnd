@@ -47,4 +47,11 @@ export class LoginComponent {
       console.log('Invalid form');
     }
   }
+
+  login(): void {
+    const loggedInUser = { username: 'example', email: 'example@email.com', fullname: 'John Doe', phone: '123456789', address: '123 Main St' };
+
+    this.authService.setLoggedInUser(loggedInUser);
+
+  }
 }
