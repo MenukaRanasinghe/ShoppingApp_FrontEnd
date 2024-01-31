@@ -9,7 +9,14 @@
       <a [class.selected]="selectedTab === 'customer'" (click)="selectTab('customer')" href="sellercustomers">Customers</a>
       <a [class.selected]="selectedTab === 'category'" (click)="selectTab('category')" href="sellercategories">Categories</a>
     </nav>
-    <div class="navbar-icons">
-        <a href="user"><img src="assets/user.png" alt="User"></a>
+    <div class="user-container" (click)="toggleLogoutButton()">
+      <img src="assets/user.png" alt="User">
+      <button *ngIf="showLogoutButton" class="logout-btn" (click)="toggleConfirmation()">Logout</button>
     </div>
-  </header>
+
+    <div *ngIf="showConfirmation" class="confirmation-modal">
+      <p>Are you sure you want to logout?</p>
+      <button class="btn btn-yes" (click)="confirmLogout()">Yes</button>
+      <button class="btn btn-no" (click)="cancelConfirmation()">No</button>
+    </div>
+</header>
