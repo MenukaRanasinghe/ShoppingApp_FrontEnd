@@ -70,17 +70,30 @@
     margin-right: 10px;
   }
 
-  .logout-btn {
-    background-color: #dad0d0;
-              color: #000000;
-              border:none;
-              padding: 0.5rem 1rem;
-              border-radius: 0.25rem;
-              cursor: pointer;
-  }
+  .dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 1;
 
-  &:hover .logout-btn {
-    display: block;
+    .dropdown-btn {
+      color: #000000;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0.25rem;
+      cursor: pointer;
+      width: 100px;
+
+      &:hover {
+        background-color: #ccc; 
+      }
+    }
   }
 }
 

@@ -39,4 +39,8 @@ export class NavbarsellerComponent {
   cancelConfirmation(): void {
     this.showConfirmation = false;
   }
+  editProfile(): void {
+    console.log('Edit Profile clicked!');
+    this.router.navigate(['/user']);
+  }
 }

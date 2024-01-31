@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, NgZone } from '@angular/core';
 import { Router } from '@angular/router';
 import { ChangeDetectorRef } from '@angular/core';
 
@@ -12,7 +12,7 @@ export class NavbaruserComponent {
   showLogoutButton: boolean = false;
   showConfirmation: boolean = false;
 
-  constructor(private router: Router,private cdr: ChangeDetectorRef) {}
+  constructor(private router: Router,private cdr: ChangeDetectorRef,private zone: NgZone) {}
 
   selectTab(tab: string): void {
     this.selectedTab = tab;
@@ -23,7 +23,9 @@ export class NavbaruserComponent {
   }
 
   toggleConfirmation(): void {
-    this.showConfirmation = !this.showConfirmation;
+    this.zone.run(() => {
+      this.showConfirmation = !this.showConfirmation;
+    });
   }
    
 
@@ -39,5 +41,9 @@ export class NavbaruserComponent {
 
   cancelConfirmation(): void {
     this.showConfirmation = false;
+  }
+  editProfile(): void {
+    console.log('Edit Profile clicked!');
+    this.router.navigate(['/user']);
   }
 }

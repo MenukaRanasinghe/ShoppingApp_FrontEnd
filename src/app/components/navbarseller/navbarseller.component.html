@@ -11,8 +11,12 @@
     </nav>
     <div class="user-container" (click)="toggleLogoutButton()">
       <img src="assets/user.png" alt="User">
-      <button *ngIf="showLogoutButton" class="logout-btn" (click)="toggleConfirmation()">Logout</button>
+      <div *ngIf="showLogoutButton" class="dropdown">
+        <button class="dropdown-btn" (click)="confirmLogout()">Logout</button>
+        <button class="dropdown-btn" (click)="editProfile()">Edit Profile</button>
+      </div>
     </div>
+    
 
     <div *ngIf="showConfirmation" class="confirmation-modal">
       <p>Are you sure you want to logout?</p>
